@@ -1,0 +1,23 @@
+BasedOnStyle: WebKit 
+TabWidth: 4 
+UseTab: ForIndentation 
+BreakBeforeBraces:  Custom 
+BraceWrapping:    
+  AfterClass:  false 
+  AfterControlStatement:  false 
+  AfterEnum:  false 
+  AfterFunction:  false 
+  AfterNamespace:  false 
+  AfterObjCDeclaration:  false 
+  AfterStruct:  false 
+  AfterUnion:  false 
+  BeforeCatch:  true 
+  BeforeElse:  true 
+  IndentBraces:  false
+ColumnLimit: 100
+AllowShortFunctionsOnASingleLine:  Inline
+AllowShortIfStatementsOnASingleLine:  false
+AllowShortCaseLabelsOnASingleLine:  false
+AllowShortLoopsOnASingleLine:  false
+BinPackArguments:	true
+BinPackParameters:	false
