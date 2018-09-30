@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "build",
             "type": "shell",
             "presentation": {
                 "echo": true,
@@ -13,10 +13,20 @@
                 "panel": "shared",
                 "showReuseMessage": true
             },
-            "command": "g++ -g ${file} -o ${workspaceFolder}/out/${relativeFile}.out",
+            "command": "g++ -g ${file} -o ${workspaceFolder}/out/Linux/${relativeFile}.out",
             "group":{
                 "kind": "build",
                 "isDefault": true
+            },
+            "windows":{
+                "command": "g++",
+                "args": [
+                    "-ggdb",
+                    "\"${file}\"",
+                    "--std=c++11",
+                    "-o",
+                    "\"${workspaceFolder}/out/Windows/${relativeFile}.exe\""
+                ]
             }
         }
     ]
