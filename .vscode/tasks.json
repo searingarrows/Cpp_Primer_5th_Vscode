@@ -13,7 +13,7 @@
                 "panel": "shared",
                 "showReuseMessage": true
             },
-            "command": "g++ -g ${file} -o ${workspaceFolder}/out/Linux/${relativeFile}.out",
+            "command": "g++ -g ${file} -o ${workspaceFolder}/out/Linux/${relativeFile}.out -I ${workspaceFolder}/tool/",
             "group":{
                 "kind": "build",
                 "isDefault": true
@@ -21,11 +21,13 @@
             "windows":{
                 "command": "g++",
                 "args": [
-                    "-ggdb",
-                    "\"${file}\"",
+                    "-g",
+                    "${file}",
                     "--std=c++11",
                     "-o",
-                    "\"${workspaceFolder}/out/Windows/${relativeFile}.exe\""
+                    "${workspaceFolder}/out/Windows/${relativeFile}.exe",
+                    "-I",
+                    "${workspaceFolder}/tool/"
                 ]
             }
         }

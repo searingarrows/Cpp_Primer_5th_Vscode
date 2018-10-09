@@ -1,4 +1,5 @@
 #include<iostream>
+#include <typecheck.h>
 /**
  * @brief typeid无法判断是否是引用，且会忽略顶层const
  * 
@@ -27,8 +28,16 @@ int main(){
 	auto& g = ci;
 	// auto& h = 42;
 	const auto& j = 42;
-	std::cout << "type name of g is: " << typeid(decltype(g)).name() << std::endl
-	          << "type name of j is: " << typeid(decltype(j)).name() << std::endl;
+	std::cout << "type name of g is: " << typeid(g).name() << std::endl
+	          << "type name of j is: " << typeid(j).name() << std::endl;
+
+	auto k = ci, &l = i;
+	auto &m = ci, *p = &ci;
+
+	check<decltype(k)>();
+	check<decltype(l)>();
+	check<decltype(m)>();
+	check<decltype(p)>();
 
 	return 0;
 }
