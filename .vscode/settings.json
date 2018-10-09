@@ -42,7 +42,8 @@
         "array": "cpp",
         "memory": "cpp",
         "sstream": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "string": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true

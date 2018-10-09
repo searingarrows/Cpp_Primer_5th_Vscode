@@ -1,6 +1,5 @@
 #include<iostream>
 #include <check_type.hpp>
-class Foo {};
 /**
  * @brief typeid无法判断是否是引用，且会忽略顶层const
  *

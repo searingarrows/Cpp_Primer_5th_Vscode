@@ -9,7 +9,7 @@
             "preLaunchTask": "build",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/out/Linux/${relativeFile}.out",
+            "program": "${workspaceFolder}/out/Linux/${fileBasenameNoExtension}.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -24,7 +24,7 @@
                 }
             ],
             "windows": {
-                "program": "${workspaceFolder}/out/Windows/${relativeFile}.exe",
+                "program": "${workspaceFolder}/out/Windows/${fileBasenameNoExtension}.exe",
                 "miDebuggerPath": "C:/LLVM/bin/gdb.exe"
             }
         }
