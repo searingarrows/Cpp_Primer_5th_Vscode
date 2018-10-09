@@ -38,7 +38,11 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "array": "cpp",
+        "memory": "cpp",
+        "sstream": "cpp",
+        "tuple": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true
