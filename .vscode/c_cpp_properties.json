@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.3.0/include",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.3.0/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
