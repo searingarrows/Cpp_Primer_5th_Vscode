@@ -13,7 +13,7 @@
                 "panel": "shared",
                 "showReuseMessage": true
             },
-            "command": "g++ -g ${file} -o ${workspaceFolder}/out/Linux/${fileBasenameNoExtension}.out -I ${workspaceFolder}/tool/ -I ${workspaceFolder}/include/",
+            "command": "g++ -g ${file} ${workspaceFolder}/include/*.cpp -o ${workspaceFolder}/out/Linux/${fileBasenameNoExtension}.out -I ${workspaceFolder}/tool/ -I ${workspaceFolder}/include/",
             "group":{
                 "kind": "build",
                 "isDefault": true
@@ -23,6 +23,7 @@
                 "args": [
                     "-g",
                     "${file}",
+                    "${workspaceFolder}/include/*.cpp",
                     "--std=c++11",
                     "-o",
                     "${workspaceFolder}/out/Windows/${fileBasenameNoExtension}.exe",
