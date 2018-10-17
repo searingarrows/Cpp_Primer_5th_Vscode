@@ -19,9 +19,9 @@ public:
 	    : bookNo(s)
 	    , units_sold(n)
 	    , revenue(p * n) {}
-	Sales_data(const std::string& s = "")
+	explicit Sales_data(const std::string& s = "")
 	    : Sales_data(s, 0, 0){}
-	Sales_data(istream& is):Sales_data(){
+	explicit Sales_data(istream& is):Sales_data(){
 		read(is, *this);
 	};
 	std::string isbn() const { return bookNo; }
