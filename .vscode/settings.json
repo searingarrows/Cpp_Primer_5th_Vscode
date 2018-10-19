@@ -44,7 +44,18 @@
         "sstream": "cpp",
         "tuple": "cpp",
         "string": "cpp",
-        "forward_list": "cpp"
+        "forward_list": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "fstream": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "algorithm": "cpp",
+        "xmemory": "cpp",
+        "list": "cpp",
+        "iterator": "cpp",
+        "functional": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true
