@@ -23,7 +23,7 @@ void biggies(vector<string> &words, vector<string>::size_type sz){
 int main(int argc, char const* argv[]) {
 	vector<string> words{ "the", "quick", "red", "fox", "jumps", "over", "the", "slow",
 		"red", "turtle" };
-	cout << DisplayContainer(words.cbegin(), words.cend(), "words original:\n")
+	cout << DisplaySequentialContainer(words.cbegin(), words.cend(), "words original:\n")
 	          << endl;
 	biggies(words, 4);
 	

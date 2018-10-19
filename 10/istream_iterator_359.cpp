@@ -11,6 +11,6 @@ int main(int argc, char const *argv[])
 	while(int_it!=eof){
 		vec.push_back(*int_it++);
 	}
-	cout<<DisplayContainer(vec.cbegin(), vec.cend())<<endl;
+	cout<<DisplaySequentialContainer(vec.cbegin(), vec.cend())<<endl;
 	return 0;
 }

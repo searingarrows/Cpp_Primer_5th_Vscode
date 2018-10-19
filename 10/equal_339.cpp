@@ -10,8 +10,8 @@ int main(int argc, char const *argv[])
 	list<const char*> cl{ "a", "b", "c", "d" };
 
 	bool e = equal(sv.cbegin(), sv.cend(), cl.cbegin());
-	cout << DisplayContainer(sv.cbegin(), sv.cend(), "the vector of string: ") << endl
+	cout << DisplaySequentialContainer(sv.cbegin(), sv.cend(), "the vector of string: ") << endl
 	          << (e ? "is equal to " : "is not equal to ") << endl;
-	cout << DisplayContainer(cl.cbegin(), cl.cend(), "the list of const char*: ") << endl;
+	cout << DisplaySequentialContainer(cl.cbegin(), cl.cend(), "the list of const char*: ") << endl;
 	return 0;
 }
