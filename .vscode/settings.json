@@ -55,7 +55,12 @@
         "xmemory": "cpp",
         "list": "cpp",
         "iterator": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "unordered_set": "cpp",
+        "map": "cpp",
+        "xfunctional": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true
