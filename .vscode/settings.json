@@ -61,7 +61,8 @@
         "xfunctional": "cpp",
         "xhash": "cpp",
         "xtree": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "allocators": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true

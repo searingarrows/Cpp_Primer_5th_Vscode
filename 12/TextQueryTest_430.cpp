@@ -1,4 +1,4 @@
-#include "../include/QueryResult.h"
+#include "../include/TextQuery.h"
 #include <iostream>
 
 using namespace std;
