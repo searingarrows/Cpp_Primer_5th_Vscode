@@ -42,7 +42,18 @@ public:
 	    : wptr(a.data)
 	    , curr(sz){};
 	std::string& deref() const;
+	std::string& operator*() const {
+		auto p = check(curr, "dereference past end");
+		return (*p)[curr];
+	}
+	std::string* operator->() const { return &this->operator*(); }
+	
 	StrBlobPtr& incr();
+	StrBlobPtr& operator++();
+	StrBlobPtr& operator--();
+	StrBlobPtr operator++(int);
+	StrBlobPtr operator--(int);
+
 	bool operator!=(const StrBlobPtr& rhs) const {
 		return wptr.lock() != rhs.wptr.lock() || curr != rhs.curr;
 	}
@@ -78,7 +89,6 @@ std::shared_ptr<std::vector<std::string>> StrBlobPtr::check(
 		throw std::runtime_error("unbound StrBlobPtr");
 	}
 }
-
 
 StrBlob::StrBlob()
     : data(std::make_shared<std::vector<std::string>>()) {}
@@ -122,4 +132,29 @@ StrBlobPtr StrBlob::begin() {
 StrBlobPtr StrBlob::end() {
 	return StrBlobPtr(*this, data->size());
 }
+
+StrBlobPtr& StrBlobPtr::operator++() {
+	check(curr, "increment past end of StrBlobPtr");
+	++curr;
+	return *this;
+}
+
+StrBlobPtr StrBlobPtr::operator++(int) {
+	auto ret = *this;
+	++*this;
+	return ret;
+}
+
+StrBlobPtr& StrBlobPtr::operator--() {
+	--curr;
+	check(curr, "increment past end of StrBlobPtr");
+	return *this;
+}
+
+StrBlobPtr StrBlobPtr::operator--(int) {
+	auto ret = *this;
+	--*this;
+	return ret;
+}
+
 #endif

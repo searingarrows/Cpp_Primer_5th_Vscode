@@ -6,13 +6,18 @@
 
 
 class StrVec {
+	friend bool operator<(const StrVec&, const StrVec&);
+
 public:
 	StrVec():elements(nullptr),first_free(nullptr),cap(nullptr){};
 	StrVec(const StrVec& rhs);
 	StrVec& operator=(const StrVec&);
+	StrVec& operator=(std::initializer_list<std::string>);
 	~StrVec();
 	StrVec(StrVec&&) noexcept;
 	StrVec& operator=(StrVec&& rhs) noexcept;
+	std::string& operator[](std::size_t n) { return elements[n]; }
+	const std::string& operator[](std::size_t n) const { return elements[n]; }
 	void push_back(const std::string&);
 	void push_back(std::string&&);
 	size_t size() const { return first_free - elements; }
@@ -103,5 +108,21 @@ StrVec& StrVec::operator=(StrVec&& rhs) noexcept{
 void StrVec::push_back(std::string&& s){
 	chk_n_alloc();
 	alloc.construct(first_free++, std::move(s));
+}
+
+bool operator<(const StrVec& lhs,const StrVec& rhs){
+	return std::lexicographical_compare(lhs.begin(), lhs.end(), rhs.begin(), rhs.end());
+}
+
+bool operator>(const StrVec& lhs, const StrVec& rhs) {
+	return rhs < lhs;
+}
+
+StrVec& StrVec::operator=(std::initializer_list<std::string> il){
+	auto data = alloc_n_copy(il.begin(), il.end());
+	free();
+	elements = data.first;
+	first_free = cap = data.second;
+	return *this;
 }
 #endif
