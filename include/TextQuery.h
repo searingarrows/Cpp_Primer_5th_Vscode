@@ -28,6 +28,13 @@ public:
 	    : sought(s)
 	    , lines(p)
 	    , file(f) {}
+	std::shared_ptr<std::vector<std::string>> get_file() const { return file; }
+	std::set<line_no>::iterator begin() { return lines->begin(); }
+	std::set<line_no>::iterator end() { return lines->end(); }
+	// std::set<line_no>::const_iterator begin() const { return lines->cbegin(); }
+	// std::set<line_no>::const_iterator end() const { return lines->cend(); }
+	// std::set<line_no>::const_iterator cbegin() { return lines->cbegin(); }
+	// std::set<line_no>::const_iterator cend() { return lines->cend(); }
 
 private:
 	std::string sought;
