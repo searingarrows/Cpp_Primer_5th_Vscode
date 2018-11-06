@@ -44,6 +44,7 @@ int main(int argc, char const* argv[]) {
 	//拷贝构造
 	HasPtr h1(*h0);
 	HasPtr h2 = *h0;
+	swap(h1, h2);
 	//拷贝复制
 	HasPtr h3;
 	h3 = *h0;

@@ -62,7 +62,8 @@
         "xhash": "cpp",
         "xtree": "cpp",
         "set": "cpp",
-        "allocators": "cpp"
+        "allocators": "cpp",
+        "ctime": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true

@@ -17,6 +17,7 @@ class Sales_data {
 	friend Sales_data operator+(const Sales_data&, const Sales_data&);
 	friend bool operator==(const Sales_data&, const Sales_data&);
 	friend bool operator!=(const Sales_data&, const Sales_data&);
+	friend class std::hash<Sales_data>;
 
 public:
 	Sales_data(const std::string& s, unsigned n, double p)
@@ -118,6 +119,18 @@ bool operator==(const Sales_data& lhs, const Sales_data& rhs){
 
 bool operator!=(const Sales_data& lhs, const Sales_data& rhs) {
 	return !(lhs == rhs);
+}
+
+namespace std {
+template <> struct hash<Sales_data> {
+	typedef size_t result_type;
+	typedef Sales_data argument_type;
+	size_t operator()(const Sales_data& s) const;
+};
+size_t hash<Sales_data>::operator()(const Sales_data& s) const {
+	std::cout << "Hash" << std::endl;
+	return hash<string>()(s.bookNo) ^ hash<unsigned>()(s.units_sold) ^ hash<double>()(s.revenue);
+}
 }
 
 #endif
