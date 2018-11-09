@@ -63,7 +63,14 @@
         "xtree": "cpp",
         "set": "cpp",
         "allocators": "cpp",
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "bitset": "cpp",
+        "locale": "cpp",
+        "regex": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true
