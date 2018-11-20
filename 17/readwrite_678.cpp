@@ -17,39 +17,39 @@ int main(int argc, char const* argv[]) {
 
 	inOut.seekg(0, fstream::beg);
 	
-	while(true){
-		string temp;
-		auto pre= inOut.tellg();
-		if(!getline(inOut, temp)){
-			break;
-		}
-		// remove the '\r' from the new line sequence "\r\n" in CRLF mode on Windows OS
-		if(temp.back()=='\r'){
-			temp.pop_back();
-		}
-        cout << temp << "  " << temp.size() << endl;
-		auto mark = inOut.tellg();
-		// cout << pre << "    ";
-		cout << inOut.tellg() <<"    ";
-		inOut.seekg(mark);
-		cout << inOut.tellg() << endl;
-	}
-	inOut.seekg(0,fstream::end);
-	inOut.clear();
+	// while(true){
+	// 	string temp;
+	// 	auto pre= inOut.tellg();
+	// 	if(!getline(inOut, temp)){
+	// 		break;
+	// 	}
+	// 	// remove the '\r' from the new line sequence "\r\n" in CRLF mode on Windows OS
+	// 	if(temp.back()=='\r'){
+	// 		temp.pop_back();
+	// 	}
+    //     cout << temp << "  " << temp.size() << endl;
+	// 	auto mark = inOut.tellg();
+	// 	// cout << pre << "    ";
+	// 	cout << inOut.tellg() <<"    ";
+	// 	inOut.seekg(mark);
+	// 	cout << inOut.tellg() << endl;
+	// }
+	// inOut.seekg(0,fstream::end);
+	// inOut.clear();
 
 	inOut.seekg(0, fstream::beg);
-	// size_t cnt = 0;
-	// string line;
-	// while (inOut && inOut.tellg() != end_mark && getline(inOut, line)) {
-	// 	cnt += line.size() + 1;
-	// 	auto mark = inOut.tellg();
-	// 	inOut.seekp(0, fstream::end);
-	// 	inOut << cnt;
-	// 	if (mark != end_mark)
-	// 		inOut << " ";
-	// 	inOut.seekg(mark);
-	// }
-	// inOut.seekp(0, fstream::end);
-	// inOut << "\n";
+	size_t cnt = 0;
+	string line;
+	while (inOut && inOut.tellg() != end_mark && getline(inOut, line)) {
+		cnt += line.size() + 1;
+		auto mark = inOut.tellg();
+		inOut.seekp(0, fstream::end);
+		inOut << cnt;
+		if (mark != end_mark)
+			inOut << " ";
+		inOut.seekg(mark);
+	}
+	inOut.seekp(0, fstream::end);
+	inOut << "\n";
 	return 0;
 }

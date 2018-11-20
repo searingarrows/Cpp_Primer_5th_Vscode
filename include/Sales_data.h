@@ -35,9 +35,10 @@ public:
 	Sales_data& operator+=(const Sales_data&);
 	explicit operator std::string() const { return bookNo; }
 	explicit operator double() const { return revenue; }
+	double avg_price() const;
 
 private:
-	double avg_price() const;
+	
 	std::string bookNo;
 	unsigned units_sold = 0;
 	double revenue = 0.0;
