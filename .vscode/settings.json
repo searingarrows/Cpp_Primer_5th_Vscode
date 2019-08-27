@@ -72,7 +72,11 @@
         "xlocmon": "cpp",
         "xloctime": "cpp",
         "iomanip": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "atomic": "cpp",
+        "cstdarg": "cpp",
+        "memory_resource": "cpp",
+        "thread": "cpp"
     },
     "editor.formatOnType": true,
     "editor.formatOnPaste": true
